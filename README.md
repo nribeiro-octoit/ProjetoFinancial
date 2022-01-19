@@ -14,7 +14,7 @@ Esse projeto é um desafio de back-end da [Alura](https://www.alura.com.br).
 
 - Uso do docker para criar containers da aplicação e banco de dados.
 
-- Uso de design patterns
+- Uso de design patterns.
 
 ## :rocket: Tecnologias
 
