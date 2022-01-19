@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  financialapi:
+    image: ${DOCKER_REGISTRY-}financialapi
+    build:
+      context: .
+      dockerfile: FinancialAPI/Dockerfile
+    environment:
+      - "ConnectionStrings:Server=127.0.0.1,11433;Database=FinancialDb;User Id=sa;Password=!Superclassic1;MultipleActiveResultSets=true"  
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: 'sqlserver'
+    container_name: sqlserver
+    environment:
+     ACCEPT_EULA: 'Y'
+     SA_PASSWORD: "!Superclassic1"
+    volumes:
+     - c:\dados\volumes\mssql:/var/opt/mssql3
+    ports:
+     - '11433:1433'
+    expose:
+     - 1433
