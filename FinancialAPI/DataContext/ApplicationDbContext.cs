@@ -13,5 +13,6 @@ namespace FinancialAPI.DataContext
 
         public DbSet<Income> Income { get; set; }
         public DbSet<Expense> Expense { get; set; }
+        public DbSet<Category> Category { get; set; }
     }
 }
